@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { Download, Printer, Award } from 'lucide-react'
 import { gradeApi, academicYearApi } from '@/api'
-import useAuthStore from '@/store/authStore'
+import useAuthStore from '@/stores/authStore'
 
 export default function KhsPage() {
   const { user } = useAuthStore()

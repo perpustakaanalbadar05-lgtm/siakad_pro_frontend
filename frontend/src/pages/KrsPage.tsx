@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { BookOpen, Check, Clock, Info, AlertTriangle } from 'lucide-react'
 import { classScheduleApi, studyPlanApi, academicYearApi } from '@/api'
-import useAuthStore from '@/store/authStore'
+import useAuthStore from '@/stores/authStore'
 
 export default function KrsPage() {
   const queryClient = useQueryClient()

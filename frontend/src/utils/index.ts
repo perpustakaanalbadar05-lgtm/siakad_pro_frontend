@@ -39,3 +39,13 @@ export function getStatusBadge(status: string): { label: string; class: string }
 export function getGenderLabel(gender: string): string {
   return gender === 'L' ? 'Laki-laki' : 'Perempuan'
 }
+
+export function formatRupiah(amount: number | string | null | undefined): string {
+  if (amount === null || amount === undefined) return 'Rp 0'
+  return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(Number(amount))
+}
+
+export function formatTime(time: string | null | undefined): string {
+  if (!time) return '-'
+  return time.substring(0, 5)
+}

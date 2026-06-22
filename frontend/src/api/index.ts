@@ -60,6 +60,14 @@ export const courseApi = {
   delete: (id: number) => api.delete(`/courses/${id}`),
 }
 
+export const roomApi = {
+  list: (params?: object) => api.get('/rooms', { params }),
+  get: (id: number) => api.get(`/rooms/${id}`),
+  create: (data: object) => api.post('/rooms', data),
+  update: (id: number, data: object) => api.put(`/rooms/${id}`, data),
+  delete: (id: number) => api.delete(`/rooms/${id}`),
+}
+
 export const dashboardApi = {
   admin: () => api.get('/dashboard/admin'),
   student: () => api.get('/dashboard/student'),

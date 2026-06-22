@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { Search, Save, CheckCircle } from 'lucide-react'
 import { classScheduleApi, gradeApi, academicYearApi } from '@/api'
-import useAuthStore from '@/store/authStore'
+import useAuthStore from '@/stores/authStore'
 
 export default function GradesInputPage() {
   const queryClient = useQueryClient()
