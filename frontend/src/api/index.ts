@@ -65,3 +65,68 @@ export const dashboardApi = {
   student: () => api.get('/dashboard/student'),
   lecturer: () => api.get('/dashboard/lecturer'),
 }
+
+// =====================================================================
+// PHASE 2: MANAJEMEN AKADEMIK
+// =====================================================================
+
+export const academicCalendarApi = {
+  list: (params?: object) => api.get('/academic-calendars', { params }),
+  get: (id: number) => api.get(`/academic-calendars/${id}`),
+  create: (data: object) => api.post('/academic-calendars', data),
+  update: (id: number, data: object) => api.put(`/academic-calendars/${id}`, data),
+  delete: (id: number) => api.delete(`/academic-calendars/${id}`),
+}
+
+export const classScheduleApi = {
+  list: (params?: object) => api.get('/class-schedules', { params }),
+  get: (id: number) => api.get(`/class-schedules/${id}`),
+  create: (data: object) => api.post('/class-schedules', data),
+  update: (id: number, data: object) => api.put(`/class-schedules/${id}`, data),
+  delete: (id: number) => api.delete(`/class-schedules/${id}`),
+}
+
+export const studyPlanApi = {
+  list: (params?: object) => api.get('/study-plans', { params }),
+  get: (id: number) => api.get(`/study-plans/${id}`),
+  create: (data: object) => api.post('/study-plans', data),
+  approve: (id: number) => api.post(`/study-plans/${id}/approve`),
+}
+
+export const gradeApi = {
+  getByStudent: (params?: object) => api.get('/grades', { params }),
+  update: (data: object) => api.post('/grades/update', data),
+}
+
+export const presenceApi = {
+  store: (data: object) => api.post('/presences', data),
+}
+
+// =====================================================================
+// PHASE 3: MANAJEMEN KEUANGAN
+// =====================================================================
+
+export const billingTypeApi = {
+  list: (params?: object) => api.get('/billing-types', { params }),
+  get: (id: number) => api.get(`/billing-types/${id}`),
+  create: (data: object) => api.post('/billing-types', data),
+  update: (id: number, data: object) => api.put(`/billing-types/${id}`, data),
+  delete: (id: number) => api.delete(`/billing-types/${id}`),
+}
+
+export const studentBillingApi = {
+  list: (params?: object) => api.get('/student-billings', { params }),
+  get: (id: number) => api.get(`/student-billings/${id}`),
+  create: (data: object) => api.post('/student-billings', data),
+  delete: (id: number) => api.delete(`/student-billings/${id}`),
+}
+
+export const paymentApi = {
+  list: (params?: object) => api.get('/payments', { params }),
+  get: (id: number) => api.get(`/payments/${id}`),
+  store: (data: FormData) => api.post('/payments', data, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  verify: (id: number, data: object) => api.post(`/payments/${id}/verify`, data),
+}
+

@@ -3,7 +3,9 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import {
   GraduationCap, LayoutDashboard, Users, UserCheck, Building2,
   BookOpen, BookMarked, ChevronLeft, ChevronRight, Bell,
-  Moon, Sun, LogOut, User, Menu, X, ChevronDown, Calendar
+  Moon, Sun, LogOut, User, Menu, X, ChevronDown, Calendar,
+  CalendarRange, CheckSquare, ClipboardList, PenTool,
+  Wallet, Receipt, CheckCircle, CreditCard
 } from 'lucide-react'
 import { useAuthStore } from '@/stores/authStore'
 import { authApi } from '@/api'
@@ -21,6 +23,25 @@ const navItems = [
     items: [
       { to: '/students', icon: Users, label: 'Mahasiswa' },
       { to: '/lecturers', icon: UserCheck, label: 'Dosen' },
+    ],
+  },
+  {
+    section: 'Perkuliahan',
+    items: [
+      { to: '/class-schedules', icon: CalendarRange, label: 'Jadwal Kuliah' },
+      { to: '/krs', icon: CheckSquare, label: 'KRS Mahasiswa' },
+      { to: '/krs-approval', icon: CheckSquare, label: 'Persetujuan KRS' },
+      { to: '/grades', icon: PenTool, label: 'Input Nilai' },
+      { to: '/khs', icon: ClipboardList, label: 'KHS Mahasiswa' },
+    ],
+  },
+  {
+    section: 'Keuangan',
+    items: [
+      { to: '/billing-types', icon: Receipt, label: 'Jenis Tagihan' },
+      { to: '/billings', icon: Wallet, label: 'Data Tagihan' },
+      { to: '/payment-verification', icon: CheckCircle, label: 'Verifikasi Bayar' },
+      { to: '/my-finance', icon: CreditCard, label: 'Keuangan Saya' },
     ],
   },
   {
